@@ -6,6 +6,5 @@ metadata:
     github.com/project-slug: DevOpsSes/Cal
 spec:
   type: service
-  # owner: user:guest
   owner: RRimu
   lifecycle: experimental
