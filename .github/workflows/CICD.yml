@@ -3,8 +3,7 @@ name: Java CI with Multi-Job Pipeline
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ main ]
+
 
 permissions:
   contents: read
@@ -40,7 +39,9 @@ jobs:
       uses: actions/upload-artifact@v3
       with:
         name: source-code
-        path: .
+        path: |
+         pom.xml
+         src/
 
   Compile:
     runs-on: ubuntu-latest
