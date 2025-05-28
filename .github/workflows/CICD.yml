@@ -25,7 +25,7 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
     - name: SonarCloud Scan
-      run: mvn -B verify sonar:sonar -Dsonar.projectKey=YOUR_PROJECT_KEY
+      run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
       env:
         SONAR_TOKEN: ${{ secrets.SATOKEN }}
         GITHUB_TOKEN: ${{ secrets.GATOKEN }}
