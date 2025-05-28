@@ -20,8 +20,8 @@
 		<maven.compiler.target>1.7</maven.compiler.target>
 		
 	
-  <sonar.projectKey>RRimu_gitopsdemocalcproject</sonar.projectKey>
-  <sonar.organization>gt1234</sonar.organization>
+  <sonar.projectKey>SessionDemo_gitOpsDemo</sonar.projectKey>
+  <sonar.organization>orgkeysess</sonar.organization>
   <sonar.host.url>https://sonarcloud.io</sonar.host.url>
 
 	</properties>
