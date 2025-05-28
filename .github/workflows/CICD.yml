@@ -24,11 +24,11 @@ jobs:
     - name: maven job
       run: mvn -B compile --file pom.xml
     - name: maven job
-        run: mvn -B test --file pom.xml
+      run: mvn -B test --file pom.xml
     - name: Publish unit Testing Job
-        uses: EnricoMi/publish-unit-test-result-action@v1.9
-        with:
-          files: "target/surefire-reports/*.xml"
+      uses: EnricoMi/publish-unit-test-result-action@v1.9
+      with:
+        files: "target/surefire-reports/*.xml"
   
   # UnitTesting:
   #   runs-on: ubuntu-latest
