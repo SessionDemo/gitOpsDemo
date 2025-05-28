@@ -14,14 +14,21 @@ jobs:
     - name: Maven - Clean Job
       run: mvn -B clean --file pom.xml
   sonarcloud-analyse:
-    name: Sonarcloud Build
     runs-on: ubuntu-latest
-    timeout-minutes: 120
     steps:
-      - name: Sonarcloud Build
-        uses: exo-actions/sonar-action@v1
-        with:
-          SONAR_TOKEN: ${{ secrets.SATOKEN }}
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+    - name: Set up JDK
+      uses: actions/setup-java@v4
+      with:
+        java-version: '17'
+        distribution: 'temurin'
+    - name: SonarCloud Scan
+      run: mvn -B verify sonar:sonar -Dsonar.projectKey=YOUR_PROJECT_KEY
+      env:
+        SONAR_TOKEN: ${{ secrets.SATOKEN }}
+        GITHUB_TOKEN: ${{ secrets.GATOKEN }}
 
   Compile:
     runs-on: ubuntu-latest
