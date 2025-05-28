@@ -36,12 +36,15 @@ jobs:
       run: mvn clean
 
     - name: Upload source for other jobs
+    
       uses: actions/upload-artifact@v3
+    - run: ls -lR
       with:
         name: source-code
+        
         path: |
          pom.xml
-         src/
+         /src
 
   Compile:
     runs-on: ubuntu-latest
