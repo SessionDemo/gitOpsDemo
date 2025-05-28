@@ -72,3 +72,16 @@ jobs:
         with:
           name: webapp
           path: target/*.war
+  Deploy:
+    runs-on: ubuntu-latest
+    needs: War
+    steps:
+      - name: Download WAR artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: webapp
+          path: target/
+      - name: Publish to GitHub Packages Apache Maven
+        run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
