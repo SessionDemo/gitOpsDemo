@@ -58,7 +58,10 @@ jobs:
   UnitTesting:
     runs-on: ubuntu-latest
     needs: Compile
-    name: Unit Testing    
+    permissions:
+      checks: write
+      contents: read
+      packages: write
     steps:
       - run: echo Should run unit tests.
       - name: Checkout Code
