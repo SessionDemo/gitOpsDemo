@@ -34,11 +34,11 @@ jobs:
 
     - name: Clean project
       run: mvn clean
+    - run: ls -lR
 
     - name: Upload source for other jobs
-    
+         
       uses: actions/upload-artifact@v3
-    - run: ls -lR
       with:
         name: source-code
         
