@@ -13,6 +13,15 @@ jobs:
         java-version: 1.8
     - name: Maven - Clean Job
       run: mvn -B clean --file pom.xml
+  sonarcloud-analyse:
+    name: Sonarcloud Build
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Sonarcloud Build
+        uses: exo-actions/sonar-action@v1
+        with:
+          SONAR_TOKEN: ${{ secrets.SATOKEN }}
 
   Compile:
     runs-on: ubuntu-latest
