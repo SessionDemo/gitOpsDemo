@@ -75,6 +75,10 @@ jobs:
   Deploy:
     runs-on: ubuntu-latest
     needs: War
+    permissions:
+      checks: write
+      contents: read
+      packages: write
     steps:
     - uses: actions/checkout@v2
     - name: Set up JDK 11
